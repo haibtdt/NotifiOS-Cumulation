@@ -21,6 +21,7 @@
 		309E34651BB0575F0049B9A5 /* NotifiOSCumulationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309E34641BB0575F0049B9A5 /* NotifiOSCumulationCenter.swift */; settings = {ASSET_TAGS = (); }; };
 		309E34681BB0D2820049B9A5 /* NCNotification+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309E34661BB0D2820049B9A5 /* NCNotification+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
 		309E34691BB0D2820049B9A5 /* NCNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309E34671BB0D2820049B9A5 /* NCNotification.swift */; settings = {ASSET_TAGS = (); }; };
+		30F208061BB372E0002BF57A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30F208051BB372E0002BF57A /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		309E34641BB0575F0049B9A5 /* NotifiOSCumulationCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifiOSCumulationCenter.swift; sourceTree = "<group>"; };
 		309E34661BB0D2820049B9A5 /* NCNotification+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NCNotification+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		309E34671BB0D2820049B9A5 /* NCNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NCNotification.swift; sourceTree = "<group>"; };
+		30F208051BB372E0002BF57A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30F208061BB372E0002BF57A /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,6 +149,7 @@
 				309E34661BB0D2820049B9A5 /* NCNotification+CoreDataProperties.swift */,
 				309E34671BB0D2820049B9A5 /* NCNotification.swift */,
 				309E34641BB0575F0049B9A5 /* NotifiOSCumulationCenter.swift */,
+				30F208051BB372E0002BF57A /* CoreData.framework */,
 			);
 			path = NotifiOSCumulation;
 			sourceTree = "<group>";
@@ -723,6 +727,7 @@
 				309E34591BB04DAB0049B9A5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		309E345F1BB04DAB0049B9A5 /* Build configuration list for PBXNativeTarget "ExampleAppTests" */ = {
 			isa = XCConfigurationList;
@@ -731,6 +736,7 @@
 				309E345B1BB04DAB0049B9A5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		309E34601BB04DAB0049B9A5 /* Build configuration list for PBXNativeTarget "ExampleAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -739,6 +745,7 @@
 				309E345D1BB04DAB0049B9A5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

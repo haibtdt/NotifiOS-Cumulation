@@ -12,11 +12,7 @@ import CoreData
 public class NCNotification: NSManagedObject {
 
 // Insert code here to add functionality to your managed object subclass
-    public func remove (callback : (NSError)-> ()) {
-    
-    
-    }
-    
+    static let entityName = "NCNotification"
     
     
     
