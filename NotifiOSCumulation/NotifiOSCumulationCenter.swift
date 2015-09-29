@@ -11,10 +11,11 @@ import CoreData
 
 public class NotifiOSCumulationCenter {
     
-    public let persistenceSetup : NCPersistenceStackSetup
-    init(setup : NCPersistenceStackSetup) {
+    let persistenceSetup : NCPersistenceStackSetup
+    public init(storeURL : NSURL) {
         
-        persistenceSetup = setup
+        persistenceSetup = NCPersistenceStackSetup(storePath: storeURL)
+        persistenceSetup.setUpContext()
         
         
     }
@@ -56,13 +57,45 @@ public class NotifiOSCumulationCenter {
     
     public func remove (notif : NCNotification, callback : (NSError?)-> ()) {
         
+        persistenceSetup.context.deleteObject(notif)
+        do {
+            
+            try persistenceSetup.context.save()
+            callback(nil)
+            
+        }
+        catch {
+            
+            callback(error as NSError)
+            
+        }
+
         
         
     }
     
     public func update (notif : NCNotification, callback : (NSError?) -> ()) {
         
-        
+        if let _ = persistenceSetup.context.objectRegisteredForID(notif.objectID) {
+            
+            do {
+                
+                try persistenceSetup.context.save()
+                callback(nil)
+                
+            } catch {
+                
+                callback(error as NSError)
+                
+            }
+            
+            
+        } else {
+            
+            let error = NSError(domain: "NotifiOSCumulation", code: 0, userInfo: [NSLocalizedDescriptionKey:"RESOURCE_NOT_EXISTING"])
+            callback(error)
+            
+        }
         
     }
 
@@ -76,10 +109,10 @@ public class NotifiOSCumulationCenter {
     
 }
 
-public class NCPersistenceStackSetup : NSObject{
+class NCPersistenceStackSetup : NSObject{
     
     var storePath_ : NSURL
-    public var storePath : NSURL {
+    var storePath : NSURL {
         
         return storePath_
         
@@ -87,7 +120,7 @@ public class NCPersistenceStackSetup : NSObject{
     
 
     
-    public init (storePath : NSURL) {
+    init (storePath : NSURL) {
         
         storePath_ = storePath
         
@@ -111,10 +144,7 @@ public class NCPersistenceStackSetup : NSObject{
             var persistenceCoordinator_ : NSPersistentStoreCoordinator! = nil
             managedModel_ = NSManagedObjectModel(contentsOfURL: thisBundle.URLForResource("Model", withExtension: "momd")!)
             persistenceCoordinator_ = NSPersistentStoreCoordinator(managedObjectModel: managedModel_)
-            let _ = NSPersistentStore(persistentStoreCoordinator: persistenceCoordinator_,
-                configurationName: nil,
-                URL: storePath,
-                options: nil)
+            try! persistenceCoordinator_.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: storePath, options: nil)
             context_ = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
             context_?.persistentStoreCoordinator = persistenceCoordinator_
             

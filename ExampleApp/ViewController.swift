@@ -7,19 +7,51 @@
 //
 
 import UIKit
+import NotifiOSCumulation
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
+    
+    var notificationCenter_ : NotifiOSCumulationCenter? = nil
+    var notificationCenter : NotifiOSCumulationCenter {
+        
+        if notificationCenter_ == nil {
+            
+            var storeURL : NSURL {
+                
+                let defaultFileManager = NSFileManager.defaultManager()
+                let appDirURL = try! defaultFileManager.URLForDirectory(NSSearchPathDirectory.ApplicationSupportDirectory, inDomain: .UserDomainMask, appropriateForURL: nil, create: true)
+                return appDirURL.URLByAppendingPathComponent("notifs.store")
+                
+                
+            }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+            notificationCenter_ = NotifiOSCumulationCenter(storeURL: storeURL)
+            
+        }
+        
+        return notificationCenter_!
+        
     }
-
+    
+    
+    @IBAction func showNotifications(sender: AnyObject) {
+        
+        notificationCenter.add("notif 1", summary: "summary of notif 1", notificationID: "001") { err in
+            
+            
+        }
+        notificationCenter.add("notif 2", summary: "summary of notif 2", notificationID: "002") { (err) -> () in
+            
+            
+        }
+        
+        let notificationTableVC = DefaultNotificationsTableViewController.createBuiltinViewController()
+        notificationTableVC.notificationCumulationCenter = notificationCenter
+        self.navigationController?.pushViewController(notificationTableVC, animated: true)
+        
+        
+    }
 
 }
 
