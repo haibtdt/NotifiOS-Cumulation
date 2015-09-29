@@ -98,6 +98,14 @@ public class NotifiOSCumulationCenter {
         }
         
     }
+    
+    
+    public func markAsRead (notif : NCNotification, callback : (NSError?) -> Void) {
+        
+        notif.read = true
+        update(notif, callback: callback)
+        
+    }
 
     
     public func markAllAsRead (callback: (NSError?)->()) {
@@ -144,7 +152,7 @@ class NCPersistenceStackSetup : NSObject{
             var persistenceCoordinator_ : NSPersistentStoreCoordinator! = nil
             managedModel_ = NSManagedObjectModel(contentsOfURL: thisBundle.URLForResource("Model", withExtension: "momd")!)
             persistenceCoordinator_ = NSPersistentStoreCoordinator(managedObjectModel: managedModel_)
-            try! persistenceCoordinator_.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: storePath, options: nil)
+            try! persistenceCoordinator_.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: storePath, options: [NSInferMappingModelAutomaticallyOption:true])
             context_ = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
             context_?.persistentStoreCoordinator = persistenceCoordinator_
             

@@ -94,12 +94,29 @@ public class DefaultNotificationsTableViewController: UITableViewController {
         let notif = allNotifcations[indexPath.row]
         cell.detailTextLabel!.text = notif.summary
         cell.textLabel!.text = notif.title
+        let isNotificationRead = notif.read!.boolValue
+        cell.backgroundColor = isNotificationRead ? UIColor.whiteColor() : UIColor.lightGrayColor()
+            
         
         
 
         return cell
     }
     
+    public override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+
+        notificationCumulationCenter!.markAsRead(allNotifcations[indexPath.row]) { _ in
+            
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                
+                self.tableView.reloadData()
+                
+            })
+            
+        }
+        
+    }
 
     /*
     // Override to support conditional editing of the table view.

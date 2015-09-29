@@ -5,7 +5,7 @@
         <attribute name="dateAdded" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="imageURL" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="notificationID" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="read" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="read" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
         <attribute name="summary" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
