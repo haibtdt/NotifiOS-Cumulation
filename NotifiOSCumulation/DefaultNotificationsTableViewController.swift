@@ -10,6 +10,8 @@ import UIKit
 
 public class DefaultNotificationsTableViewController: UITableViewController {
     
+    @IBOutlet weak var markAllAsReadButton: UIBarButtonItem!
+    
     public class func createBuiltinViewController () -> DefaultNotificationsTableViewController {
         
         let builtStoryBoard = UIStoryboard(name: "Storyboard", bundle: NSBundle(forClass: DefaultNotificationsTableViewController.classForCoder()))
@@ -64,11 +66,25 @@ public class DefaultNotificationsTableViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
 //         Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-         self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        self.navigationItem.rightBarButtonItems = [markAllAsReadButton, self.editButtonItem()]
 
     }
 
+    @IBAction func markAllAsRead(sender: AnyObject) {
+        
+        notificationCumulationCenter!.markAsRead(allNotifcations) { (_) -> Void in
+            
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                
+                self.tableView.reloadData()
+                
+            })
+            
+        }
+        
+    }
 
+    
     // MARK: - Table view data source
 
  

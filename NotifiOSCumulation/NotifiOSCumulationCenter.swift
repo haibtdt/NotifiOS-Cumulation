@@ -107,8 +107,29 @@ public class NotifiOSCumulationCenter {
         
     }
 
+    public func markAsRead (notifications : [NCNotification], callback: (NSError?)->Void) {
+        
+        for notif in notifications {
+            
+            notif.read = true
+            
+        }
+        do {
+            
+            try persistenceSetup.context.save()
+            callback(nil)
+            
+        } catch {
+            
+            callback(error as NSError)
+            
+        }
+
+        
+    }
     
     public func markAllAsRead (callback: (NSError?)->()) {
+        
         
         
         
