@@ -80,24 +80,14 @@ public class DefaultNotificationsTableViewController: UITableViewController {
         
     }
 
-    let cellID = "Cell Identifier"
+    let cellID = "vn.haibui.NCNotificationCell"
     override public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        var cell : UITableViewCell! = tableView.dequeueReusableCellWithIdentifier(cellID)
-        if cell == nil {
-            
-            cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: cellID)
-
-        }
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellID, forIndexPath: indexPath) as! NCNotificationTableViewCell
         
 
         // Configure the cell...
-        let notif = allNotifcations[indexPath.row]
-        cell.detailTextLabel!.text = notif.summary
-        cell.textLabel!.text = notif.title
-        let isNotificationRead = notif.read!.boolValue
-        cell.backgroundColor = isNotificationRead ? UIColor.whiteColor() : UIColor.lightGrayColor()
-        
+        cell.notif = allNotifcations[indexPath.row]
         
         
 

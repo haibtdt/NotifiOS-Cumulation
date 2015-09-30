@@ -26,6 +26,8 @@
 		46E2BEDA1BBA7A1C00F238D3 /* NotifiOSCumulation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 309E34151BB04CF10049B9A5 /* NotifiOSCumulation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		46E2BEDF1BBA7A8100F238D3 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46E2BEDE1BBA7A8100F238D3 /* Storyboard.storyboard */; settings = {ASSET_TAGS = (); }; };
 		46E2BEE11BBA7AE400F238D3 /* DefaultNotificationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E2BEE01BBA7AE400F238D3 /* DefaultNotificationsTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		46E2BEE31BBB828300F238D3 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46E2BEE21BBB828300F238D3 /* Media.xcassets */; settings = {ASSET_TAGS = (); }; };
+		46E2BEE51BBB831900F238D3 /* NCNotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E2BEE41BBB831900F238D3 /* NCNotificationTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +102,8 @@
 		30F208051BB372E0002BF57A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		46E2BEDE1BBA7A8100F238D3 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		46E2BEE01BBA7AE400F238D3 /* DefaultNotificationsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultNotificationsTableViewController.swift; sourceTree = "<group>"; };
+		46E2BEE21BBB828300F238D3 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		46E2BEE41BBB831900F238D3 /* NCNotificationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NCNotificationTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,7 +183,9 @@
 				309E34641BB0575F0049B9A5 /* NotifiOSCumulationCenter.swift */,
 				30F208051BB372E0002BF57A /* CoreData.framework */,
 				46E2BEDE1BBA7A8100F238D3 /* Storyboard.storyboard */,
+				46E2BEE41BBB831900F238D3 /* NCNotificationTableViewCell.swift */,
 				46E2BEE01BBA7AE400F238D3 /* DefaultNotificationsTableViewController.swift */,
+				46E2BEE21BBB828300F238D3 /* Media.xcassets */,
 			);
 			path = NotifiOSCumulation;
 			sourceTree = "<group>";
@@ -385,6 +391,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46E2BEE31BBB828300F238D3 /* Media.xcassets in Resources */,
 				46E2BEDF1BBA7A8100F238D3 /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -432,6 +439,7 @@
 				309E34631BB0545B0049B9A5 /* Model.xcdatamodeld in Sources */,
 				309E34681BB0D2820049B9A5 /* NCNotification+CoreDataProperties.swift in Sources */,
 				309E34691BB0D2820049B9A5 /* NCNotification.swift in Sources */,
+				46E2BEE51BBB831900F238D3 /* NCNotificationTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
