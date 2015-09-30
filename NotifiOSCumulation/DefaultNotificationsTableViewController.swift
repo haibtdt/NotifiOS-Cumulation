@@ -41,7 +41,7 @@ public class DefaultNotificationsTableViewController: UITableViewController {
     }
     
     var allNotifications_ : [NCNotification] = []
-    var allNotifcations : [NCNotification] {
+    public var allNotifcations : [NCNotification] {
         
         get {
             
@@ -86,8 +86,6 @@ public class DefaultNotificationsTableViewController: UITableViewController {
 
     
     // MARK: - Table view data source
-
- 
     override public func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         
@@ -109,23 +107,6 @@ public class DefaultNotificationsTableViewController: UITableViewController {
 
         return cell
     }
-    
-    public override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
-
-        notificationCumulationCenter!.markAsRead(allNotifcations[indexPath.row]) { _ in
-            
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                
-                self.tableView.reloadData()
-                
-            })
-            
-        }
-        
-    }
-
-
 
 
     // Override to support editing the table view.

@@ -9,7 +9,7 @@
 import UIKit
 import NotifiOSCumulation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDelegate {
 
     
     var notificationCenter_ : NotifiOSCumulationCenter? = nil
@@ -34,7 +34,7 @@ class ViewController: UIViewController {
         
     }
     
-    
+    let notificationTableVC = DefaultNotificationsTableViewController.createBuiltinViewController()
     @IBAction func showNotifications(sender: AnyObject) {
         
         notificationCenter.add("notif 1", summary: "summary of notif 1", notificationID: "001") { err in
@@ -46,12 +46,28 @@ class ViewController: UIViewController {
             
         }
         print(notificationCenter.unreadCount)
-        let notificationTableVC = DefaultNotificationsTableViewController.createBuiltinViewController()
+        notificationTableVC.tableView.delegate = self
         notificationTableVC.notificationCumulationCenter = notificationCenter
         self.navigationController?.pushViewController(notificationTableVC, animated: true)
         
         
     }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        
+        notificationCenter.markAsRead(notificationTableVC.allNotifcations[indexPath.row]) { _ in
+            
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                
+                self.notificationTableVC.tableView.reloadData()
+                
+            })
+            
+        }
+        
+    }
+
 
 }
 
