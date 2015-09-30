@@ -45,6 +45,12 @@ class NCNotificationTableViewCell: UITableViewCell {
                 let isRead = newValue_.read!.boolValue
                 unreadIndicatorImageView.hidden = isRead
                 
+                let datetimeFormatter = NSDateFormatter()
+                datetimeFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
+                datetimeFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
+                datetimeFormatter.doesRelativeDateFormatting = true
+                notificationDateLabel?.text = datetimeFormatter.stringFromDate(newValue_.dateAdded!)
+                
             }
             
         }
