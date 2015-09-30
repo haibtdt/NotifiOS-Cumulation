@@ -29,6 +29,17 @@ public class NotifiOSCumulationCenter {
 
         
     }
+    
+    public var unreadCount : Int {
+        
+        let fetchRequest = NSFetchRequest(entityName: NCNotification.entityName)
+        fetchRequest.predicate = NSPredicate(format: "read == NO", argumentArray: nil)
+        fetchRequest.resultType = .CountResultType
+        let results = persistenceSetup.context.countForFetchRequest(fetchRequest, error: nil)
+        return results
+
+        
+    }
 
     
     public func add( notifcationTilte: String, summary: String, notificationID : String, notificationCreatedDate dateAdded : NSDate = NSDate(),callback: (NSError?)->()) {

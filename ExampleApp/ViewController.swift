@@ -45,7 +45,7 @@ class ViewController: UIViewController {
             
             
         }
-        
+        print(notificationCenter.unreadCount)
         let notificationTableVC = DefaultNotificationsTableViewController.createBuiltinViewController()
         notificationTableVC.notificationCumulationCenter = notificationCenter
         self.navigationController?.pushViewController(notificationTableVC, animated: true)
