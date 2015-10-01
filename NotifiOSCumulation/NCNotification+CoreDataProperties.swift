@@ -21,5 +21,6 @@ extension NCNotification {
     @NSManaged public var read: NSNumber?
     @NSManaged public var dateAdded: NSDate?
     @NSManaged public var imageURL: String?
+    @NSManaged public var targetObjectID: String?
 
 }
