@@ -14,12 +14,12 @@ import CoreData
 
 extension NCNotification {
 
-    @NSManaged var notificationID: String?
-    @NSManaged var title: String?
-    @NSManaged var summary: String?
-    @NSManaged var actionID: String?
-    @NSManaged var read: NSNumber?
-    @NSManaged var dateAdded: NSDate?
-    @NSManaged var imageURL: String?
+    @NSManaged public var notificationID: String?
+    @NSManaged public var title: String?
+    @NSManaged public var summary: String?
+    @NSManaged public var actionID: String?
+    @NSManaged public var read: NSNumber?
+    @NSManaged public var dateAdded: NSDate?
+    @NSManaged public var imageURL: String?
 
 }

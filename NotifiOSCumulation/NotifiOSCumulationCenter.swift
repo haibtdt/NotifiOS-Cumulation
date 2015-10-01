@@ -43,7 +43,7 @@ public class NotifiOSCumulationCenter {
     }
 
     
-    public func add( notifcationTilte: String, summary: String, notificationID : String, notificationCreatedDate dateAdded : NSDate = NSDate(),callback: (NSError?)->()) {
+    public func add( notifcationTilte: String, summary: String, notificationID : String, notificationCreatedDate dateAdded : NSDate = NSDate(), actionID : String = "", callback: (NSError?)->()) {
         
         let notif = NSEntityDescription.insertNewObjectForEntityForName(NCNotification.entityName,
             inManagedObjectContext: persistenceSetup.context) as! NCNotification
@@ -51,6 +51,7 @@ public class NotifiOSCumulationCenter {
         notif.summary = summary
         notif.notificationID = notificationID
         notif.dateAdded = dateAdded
+        notif.actionID = actionID
         do {
             
             try persistenceSetup.context.save()
