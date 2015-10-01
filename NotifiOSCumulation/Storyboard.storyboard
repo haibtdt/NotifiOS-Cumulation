@@ -57,6 +57,8 @@
                                     <animations/>
                                     <constraints>
                                         <constraint firstItem="utd-5p-8di" firstAttribute="top" secondItem="rhu-gA-yAv" secondAttribute="bottom" constant="3" id="0KH-MG-dyg"/>
+                                        <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="mZR-HF-84M" secondAttribute="trailing" id="5XM-VT-HGZ"/>
+                                        <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="rhu-gA-yAv" secondAttribute="trailing" id="8iR-Ge-tsk"/>
                                         <constraint firstItem="mZR-HF-84M" firstAttribute="top" secondItem="are-mE-sSb" secondAttribute="topMargin" constant="3" id="Kll-3V-17U"/>
                                         <constraint firstItem="rhu-gA-yAv" firstAttribute="leading" secondItem="mZR-HF-84M" secondAttribute="leading" id="N5F-f9-Fmp"/>
                                         <constraint firstItem="rhu-gA-yAv" firstAttribute="top" secondItem="mZR-HF-84M" secondAttribute="bottom" id="PPt-fh-aYi"/>

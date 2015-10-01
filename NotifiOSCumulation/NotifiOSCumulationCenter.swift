@@ -24,6 +24,7 @@ public class NotifiOSCumulationCenter {
         
         let fetchRequest = NSFetchRequest(entityName: NCNotification.entityName)
         fetchRequest.predicate = NSPredicate(value: true)
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "dateAdded", ascending: false)]
         let results = try? persistenceSetup.context.executeFetchRequest(fetchRequest)
         return (results as? [NCNotification])
 
