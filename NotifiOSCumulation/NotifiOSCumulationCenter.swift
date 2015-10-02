@@ -102,6 +102,34 @@ public class NotifiOSCumulationCenter {
         
     }
     
+    
+    public func removeAll (callback : (NSError?)->()) {
+        
+        let fetchRequest = NSFetchRequest(entityName: NCNotification.entityName)
+        fetchRequest.predicate = NSPredicate(value: true)
+        fetchRequest.includesPropertyValues = false
+        let results = try! persistenceSetup.context.executeFetchRequest(fetchRequest)
+        for notif in (results as! [NCNotification]){
+            
+            persistenceSetup.context.deleteObject(notif)
+
+        }
+        do {
+            
+            try persistenceSetup.context.save()
+            callback(nil)
+            
+        }
+        catch {
+            
+            callback(error as NSError)
+            
+        }
+        
+        
+    }
+    
+    
     public func update (notif : NCNotification, callback : (NSError?) -> ()) {
         
         if let _ = persistenceSetup.context.objectRegisteredForID(notif.objectID) {

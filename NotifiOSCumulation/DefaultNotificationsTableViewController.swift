@@ -10,7 +10,8 @@ import UIKit
 
 public class DefaultNotificationsTableViewController: UITableViewController {
     
-    @IBOutlet weak var markAllAsReadButton: UIBarButtonItem!
+    @IBOutlet var clearAllButton: UIBarButtonItem!
+    @IBOutlet var markAllAsReadButton: UIBarButtonItem!
     
     public class func createBuiltinViewController () -> DefaultNotificationsTableViewController {
         
@@ -66,7 +67,7 @@ public class DefaultNotificationsTableViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
 //         Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        self.navigationItem.rightBarButtonItems = [markAllAsReadButton, self.editButtonItem()]
+        self.navigationItem.rightBarButtonItems = [ clearAllButton, markAllAsReadButton, self.editButtonItem()]
 
     }
 
@@ -83,6 +84,24 @@ public class DefaultNotificationsTableViewController: UITableViewController {
         }
         
     }
+    
+    
+    @IBAction func clearAllNotifications(sender: AnyObject) {
+        
+        
+        notificationCumulationCenter!.removeAll { (_) -> Void in
+            
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                
+                self.refreshViewData()
+                
+            })
+            
+        }
+        
+        
+    }
+    
 
     
     // MARK: - Table view data source
@@ -136,5 +155,7 @@ public class DefaultNotificationsTableViewController: UITableViewController {
         }
         
     }
+    
+    
 
 }
