@@ -31,6 +31,19 @@ public class NotifiOSCumulationCenter {
         
     }
     
+    
+    public func getNotification(notificationID : String) -> NCNotification? {
+        
+        let fetchRequest = NSFetchRequest(entityName: NCNotification.entityName)
+        fetchRequest.predicate = NSPredicate(format: "notificationID == %@", argumentArray: [notificationID])
+        fetchRequest.fetchLimit = 1
+        let results = (try? persistenceSetup.context.executeFetchRequest(fetchRequest)) as? [NCNotification]
+        return results?.first
+        
+        
+    }
+    
+    
     public var unreadCount : Int {
         
         let fetchRequest = NSFetchRequest(entityName: NCNotification.entityName)
