@@ -25,14 +25,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notification title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mZR-HF-84M" userLabel="Title">
-                                            <rect key="frame" x="34" y="11" width="97" height="16"/>
+                                            <rect key="frame" x="63" y="11" width="97" height="16"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unread_indicator" translatesAutoresizingMaskIntoConstraints="NO" id="LA9-iW-iCF" userLabel="Unread Indicator">
-                                            <rect key="frame" x="16" y="14" width="10" height="10"/>
+                                            <rect key="frame" x="1" y="34" width="10" height="10"/>
                                             <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="LA9-iW-iCF" secondAttribute="height" multiplier="1:1" id="XMe-BF-NKo"/>
@@ -40,32 +40,43 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20:00 25/9/2015" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="utd-5p-8di" userLabel="Date Sent">
-                                            <rect key="frame" x="34" y="45" width="96" height="15"/>
+                                            <rect key="frame" x="63" y="45" width="96" height="15"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notification summary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rhu-gA-yAv" userLabel="Summary">
-                                            <rect key="frame" x="34" y="27" width="121" height="15"/>
+                                            <rect key="frame" x="63" y="27" width="121" height="15"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no_pic" translatesAutoresizingMaskIntoConstraints="NO" id="hFL-lb-SHw">
+                                            <rect key="frame" x="15" y="19" width="40" height="40"/>
+                                            <animations/>
+                                            <color key="backgroundColor" red="0.2470588386" green="0.83529418710000003" blue="0.0078431377190000002" alpha="1" colorSpace="deviceRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="40" id="Dd0-F4-JNk"/>
+                                                <constraint firstAttribute="width" secondItem="hFL-lb-SHw" secondAttribute="height" multiplier="1:1" id="OcY-g7-eYP"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <animations/>
                                     <constraints>
                                         <constraint firstItem="utd-5p-8di" firstAttribute="top" secondItem="rhu-gA-yAv" secondAttribute="bottom" constant="3" id="0KH-MG-dyg"/>
                                         <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="mZR-HF-84M" secondAttribute="trailing" id="5XM-VT-HGZ"/>
+                                        <constraint firstItem="hFL-lb-SHw" firstAttribute="centerY" secondItem="are-mE-sSb" secondAttribute="centerY" id="7YV-nT-zJc"/>
                                         <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="rhu-gA-yAv" secondAttribute="trailing" id="8iR-Ge-tsk"/>
                                         <constraint firstItem="mZR-HF-84M" firstAttribute="top" secondItem="are-mE-sSb" secondAttribute="topMargin" constant="3" id="Kll-3V-17U"/>
                                         <constraint firstItem="rhu-gA-yAv" firstAttribute="leading" secondItem="mZR-HF-84M" secondAttribute="leading" id="N5F-f9-Fmp"/>
                                         <constraint firstItem="rhu-gA-yAv" firstAttribute="top" secondItem="mZR-HF-84M" secondAttribute="bottom" id="PPt-fh-aYi"/>
                                         <constraint firstItem="utd-5p-8di" firstAttribute="leading" secondItem="mZR-HF-84M" secondAttribute="leading" id="WOe-H7-Bu7"/>
-                                        <constraint firstItem="mZR-HF-84M" firstAttribute="leading" secondItem="are-mE-sSb" secondAttribute="leadingMargin" constant="26" id="aWZ-Zc-FOC"/>
-                                        <constraint firstItem="LA9-iW-iCF" firstAttribute="centerY" secondItem="mZR-HF-84M" secondAttribute="centerY" id="p0t-kv-8tW"/>
-                                        <constraint firstItem="mZR-HF-84M" firstAttribute="leading" secondItem="LA9-iW-iCF" secondAttribute="trailing" constant="8" id="u2f-fL-eRu"/>
+                                        <constraint firstItem="LA9-iW-iCF" firstAttribute="centerY" secondItem="are-mE-sSb" secondAttribute="centerY" id="WVh-r8-MhQ"/>
+                                        <constraint firstItem="mZR-HF-84M" firstAttribute="leading" secondItem="are-mE-sSb" secondAttribute="leadingMargin" constant="55" id="aWZ-Zc-FOC"/>
+                                        <constraint firstItem="mZR-HF-84M" firstAttribute="leading" secondItem="hFL-lb-SHw" secondAttribute="trailing" constant="8" id="sNp-hF-Rjf"/>
+                                        <constraint firstItem="mZR-HF-84M" firstAttribute="leading" secondItem="LA9-iW-iCF" secondAttribute="trailing" constant="52" id="u2f-fL-eRu"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
@@ -105,6 +116,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="no_pic" width="48" height="48"/>
         <image name="unread_indicator" width="21" height="21"/>
     </resources>
 </document>
