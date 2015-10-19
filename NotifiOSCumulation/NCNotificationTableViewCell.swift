@@ -61,7 +61,8 @@ class NCNotificationTableViewCell: UITableViewCell {
                 
                 if newValue_.imageURL != nil && newValue_.imageURL!.isEmpty == false {
                     
-                    if let notifImage = UIImage(contentsOfFile: newValue_.imageURL!) {
+                    let imageURL = NSURL(string: newValue_.imageURL!)!
+                    if let notifImage = UIImage(contentsOfFile: imageURL.path!) {
                         
                         thumbnailImage.image = notifImage
                         
