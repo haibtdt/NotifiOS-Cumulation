@@ -84,6 +84,7 @@
                                     <outlet property="notificationDateLabel" destination="utd-5p-8di" id="3fH-HT-Mbr"/>
                                     <outlet property="notificationTitleLabel" destination="mZR-HF-84M" id="5lv-uk-L4z"/>
                                     <outlet property="summaryLabel" destination="rhu-gA-yAv" id="V0P-6t-ENB"/>
+                                    <outlet property="thumbnailImage" destination="hFL-lb-SHw" id="lT2-PV-zhr"/>
                                     <outlet property="unreadIndicatorImageView" destination="LA9-iW-iCF" id="szf-J0-p1c"/>
                                 </connections>
                             </tableViewCell>

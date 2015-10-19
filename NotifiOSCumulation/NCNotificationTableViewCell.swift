@@ -14,6 +14,7 @@ class NCNotificationTableViewCell: UITableViewCell {
     @IBOutlet weak var notificationDateLabel: UILabel!
     @IBOutlet weak var notificationTitleLabel: UILabel!
     @IBOutlet weak var summaryLabel: UILabel!
+    @IBOutlet weak var thumbnailImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -39,6 +40,10 @@ class NCNotificationTableViewCell: UITableViewCell {
         
         set {
             
+            let bundle = NSBundle(forClass: self.classForCoder)
+            thumbnailImage.image = UIImage(named: "no_pic", inBundle: bundle, compatibleWithTraitCollection: nil)
+
+            
             notif_ = newValue
             if let newValue_ = newValue {
                 
@@ -52,6 +57,17 @@ class NCNotificationTableViewCell: UITableViewCell {
                 datetimeFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
                 datetimeFormatter.doesRelativeDateFormatting = true
                 notificationDateLabel?.text = datetimeFormatter.stringFromDate(newValue_.dateAdded!)
+                
+                
+                if newValue_.imageURL != nil && newValue_.imageURL!.isEmpty == false {
+                    
+                    if let notifImage = UIImage(contentsOfFile: newValue_.imageURL!) {
+                        
+                        thumbnailImage.image = notifImage
+                        
+                    }
+                    
+                }
                 
             }
             
