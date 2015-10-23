@@ -21,6 +21,13 @@ class NCNotificationTableViewCell: UITableViewCell {
         // Initialization code
         
         editingAccessoryType = .None
+        
+        //rounding the image view
+        thumbnailImage.layer.cornerRadius = CGRectGetHeight(thumbnailImage.frame)/2
+        thumbnailImage.clipsToBounds = true
+        thumbnailImage.layer.borderColor = UIColor.grayColor().CGColor
+        thumbnailImage.layer.borderWidth = 1.0
+        
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
