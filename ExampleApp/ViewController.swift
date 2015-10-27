@@ -16,17 +16,8 @@ class ViewController: UIViewController, UITableViewDelegate {
     var notificationCenter : NotifiOSCumulationCenter {
         
         if notificationCenter_ == nil {
-            
-            var storeURL : NSURL {
-                
-                let defaultFileManager = NSFileManager.defaultManager()
-                let appDirURL = try! defaultFileManager.URLForDirectory(NSSearchPathDirectory.ApplicationSupportDirectory, inDomain: .UserDomainMask, appropriateForURL: nil, create: true)
-                return appDirURL.URLByAppendingPathComponent("notifs.store")
-                
-                
-            }
 
-            notificationCenter_ = NotifiOSCumulationCenter(storeURL: storeURL)
+            notificationCenter_ = NotifiOSCumulationCenter()
             
         }
         

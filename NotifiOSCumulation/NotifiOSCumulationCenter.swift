@@ -12,7 +12,17 @@ import CoreData
 public class NotifiOSCumulationCenter {
     
     let persistenceSetup : NCPersistenceStackSetup
-    public init(storeURL : NSURL) {
+    public init(var storeURL : NSURL! = nil) {
+        
+        if storeURL == nil {
+            
+            let defaultFileManager = NSFileManager.defaultManager()
+            let appDirURL = try! defaultFileManager.URLForDirectory(NSSearchPathDirectory.ApplicationSupportDirectory, inDomain: .UserDomainMask, appropriateForURL: nil, create: true)
+            storeURL = appDirURL.URLByAppendingPathComponent("notifs.store")
+            
+            
+        }
+
         
         persistenceSetup = NCPersistenceStackSetup(storePath: storeURL)
         persistenceSetup.setUpContext()
