@@ -30,6 +30,7 @@ public class NotifiOSCumulationCenter {
         
     }
     
+//    MARK: queries
     public var allNotifications : [NCNotification]? {
         
         let fetchRequest = NSFetchRequest(entityName: NCNotification.entityName)
@@ -66,7 +67,16 @@ public class NotifiOSCumulationCenter {
     }
 
     
-    public func add( notifcationTilte: String, summary: String, notificationID : String, notificationCreatedDate dateAdded : NSDate = NSDate(), actionID : String = "", targetObjectID : String = "", imageURL : String? = nil , callback: (NSError?)->()) {
+//    MARK: managements
+    public func add(
+        notifcationTilte: String,
+        summary: String,
+        notificationID : String,
+        notificationCreatedDate dateAdded : NSDate = NSDate(),
+        actionID : String = "",
+        targetObjectID : String = "",
+        imageURL : String? = nil ,
+        callback: (NSError?)->()) {
         
         let notif = NSEntityDescription.insertNewObjectForEntityForName(NCNotification.entityName,
             inManagedObjectContext: persistenceSetup.context) as! NCNotification

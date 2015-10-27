@@ -9,10 +9,7 @@
 import UIKit
 
 public class DefaultNotificationsTableViewController: UITableViewController {
-    
-    @IBOutlet var clearAllButton: UIBarButtonItem!
-    @IBOutlet var markAllAsReadButton: UIBarButtonItem!
-    
+
     public class func createBuiltinViewController () -> DefaultNotificationsTableViewController {
         
         let builtStoryBoard = UIStoryboard(name: "Storyboard", bundle: NSBundle(forClass: DefaultNotificationsTableViewController.classForCoder()))
@@ -23,6 +20,15 @@ public class DefaultNotificationsTableViewController: UITableViewController {
     }
 
     
+    
+//    MARK: built-in controls
+    @IBOutlet var clearAllButton: UIBarButtonItem!
+    @IBOutlet var markAllAsReadButton: UIBarButtonItem!
+    
+
+
+    
+//    MARK: public configuration & query
     var notificationCumulationCenter_ : NotifiOSCumulationCenter? = nil
     public var notificationCumulationCenter : NotifiOSCumulationCenter? {
         
@@ -41,6 +47,18 @@ public class DefaultNotificationsTableViewController: UITableViewController {
         
     }
     
+    
+    public func refreshViewData () {
+        
+        allNotifications_ = notificationCumulationCenter_?.allNotifications ?? []
+        tableView?.reloadData()
+        
+        
+    }
+    
+    
+
+    
     var allNotifications_ : [NCNotification] = []
     public var allNotifcations : [NCNotification] {
         
@@ -52,25 +70,8 @@ public class DefaultNotificationsTableViewController: UITableViewController {
         
     }
     
-    public func refreshViewData () {
-        
-        allNotifications_ = notificationCumulationCenter_?.allNotifications ?? []
-        tableView?.reloadData()
-        
-        
-    }
-
-    override public func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-//         Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        self.navigationItem.rightBarButtonItems = [ clearAllButton, markAllAsReadButton, self.editButtonItem()]
-
-    }
-
+    
+//    MARK: internal implementations - here are dragons
     @IBAction func markAllAsRead(sender: AnyObject) {
         
         notificationCumulationCenter!.markAsRead(allNotifcations) { (_) -> Void in
@@ -104,7 +105,6 @@ public class DefaultNotificationsTableViewController: UITableViewController {
     
 
     
-    // MARK: - Table view data source
     override public func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         
