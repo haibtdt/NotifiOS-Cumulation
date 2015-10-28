@@ -9,6 +9,15 @@
 import UIKit
 import CoreData
 
+public protocol NotifiOSCumulationCenterObserver : class {
+    
+    func notificationAdded (addedNotif : NCNotification)
+    func notificationsUpdated (updatedNotifs : [NCNotification])
+    func notificationsWillBeRemoved (notifs : [NCNotification])
+    
+    
+}
+
 public class NotifiOSCumulationCenter {
     
     let persistenceSetup : NCPersistenceStackSetup
@@ -29,6 +38,7 @@ public class NotifiOSCumulationCenter {
         
         
     }
+    public var observer : NotifiOSCumulationCenterObserver? = nil
     
 //    MARK: queries
     public var allNotifications : [NCNotification]? {
@@ -91,6 +101,7 @@ public class NotifiOSCumulationCenter {
             
             try persistenceSetup.context.save()
             callback(nil)
+            observer?.notificationAdded(notif)
         
         }
         catch {
@@ -106,6 +117,8 @@ public class NotifiOSCumulationCenter {
     
     public func remove (notif : NCNotification, callback : (NSError?)-> ()) {
         
+
+        observer?.notificationsWillBeRemoved([notif])
         persistenceSetup.context.deleteObject(notif)
         do {
             
@@ -129,8 +142,9 @@ public class NotifiOSCumulationCenter {
         let fetchRequest = NSFetchRequest(entityName: NCNotification.entityName)
         fetchRequest.predicate = NSPredicate(value: true)
         fetchRequest.includesPropertyValues = false
-        let results = try! persistenceSetup.context.executeFetchRequest(fetchRequest)
-        for notif in (results as! [NCNotification]){
+        let results = try! persistenceSetup.context.executeFetchRequest(fetchRequest) as! [NCNotification]
+        observer?.notificationsWillBeRemoved(results)
+        for notif in (results){
             
             persistenceSetup.context.deleteObject(notif)
 
@@ -159,6 +173,7 @@ public class NotifiOSCumulationCenter {
                 
                 try persistenceSetup.context.save()
                 callback(nil)
+                observer?.notificationsUpdated([notif])
                 
             } catch {
                 
@@ -195,6 +210,7 @@ public class NotifiOSCumulationCenter {
             
             try persistenceSetup.context.save()
             callback(nil)
+            observer?.notificationsUpdated(notifications)
             
         } catch {
             
