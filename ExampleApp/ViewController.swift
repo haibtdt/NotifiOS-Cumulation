@@ -25,7 +25,7 @@ class ViewController: UIViewController, UITableViewDelegate {
         
     }
     
-    let notificationTableVC = DefaultNotificationsTableViewController.createBuiltinViewController()
+    let notificationTableVC = DefaultNotificationControllerFactory.createBuiltinViewController()
     @IBAction func showNotifications(sender: AnyObject) {
         
         notificationCenter.add("notif 1", summary: "summary of notif 1", notificationID: "001") { err in

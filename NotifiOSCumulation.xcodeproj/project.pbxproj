@@ -29,6 +29,7 @@
 		46E2BEE31BBB828300F238D3 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46E2BEE21BBB828300F238D3 /* Media.xcassets */; };
 		46E2BEE51BBB831900F238D3 /* NCNotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E2BEE41BBB831900F238D3 /* NCNotificationTableViewCell.swift */; };
 		92079F0D1BDF82C300CCADD5 /* NCPersistenceSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92079F0C1BDF82C300CCADD5 /* NCPersistenceSetup.swift */; };
+		92FD2E301C155CA10062F485 /* DefaultNotificationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FD2E2F1C155CA00062F485 /* DefaultNotificationFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +107,7 @@
 		46E2BEE21BBB828300F238D3 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		46E2BEE41BBB831900F238D3 /* NCNotificationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NCNotificationTableViewCell.swift; sourceTree = "<group>"; };
 		92079F0C1BDF82C300CCADD5 /* NCPersistenceSetup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NCPersistenceSetup.swift; sourceTree = "<group>"; };
+		92FD2E2F1C155CA00062F485 /* DefaultNotificationFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultNotificationFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +187,7 @@
 				46E2BEDE1BBA7A8100F238D3 /* Storyboard.storyboard */,
 				46E2BEE41BBB831900F238D3 /* NCNotificationTableViewCell.swift */,
 				46E2BEE01BBA7AE400F238D3 /* DefaultNotificationsTableViewController.swift */,
+				92FD2E2F1C155CA00062F485 /* DefaultNotificationFactory.swift */,
 				92079F0C1BDF82C300CCADD5 /* NCPersistenceSetup.swift */,
 			);
 			path = NotifiOSCumulation;
@@ -451,6 +454,7 @@
 				309E34631BB0545B0049B9A5 /* Model.xcdatamodeld in Sources */,
 				309E34681BB0D2820049B9A5 /* NCNotification+CoreDataProperties.swift in Sources */,
 				309E34691BB0D2820049B9A5 /* NCNotification.swift in Sources */,
+				92FD2E301C155CA10062F485 /* DefaultNotificationFactory.swift in Sources */,
 				46E2BEE51BBB831900F238D3 /* NCNotificationTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

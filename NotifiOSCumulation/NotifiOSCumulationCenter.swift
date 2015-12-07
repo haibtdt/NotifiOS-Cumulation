@@ -15,7 +15,6 @@ public protocol NotifiOSCumulationCenterObserver : class {
     func notificationsUpdated (updatedNotifs : [NCNotification])
     func notificationsWillBeRemoved (notifs : [NCNotification])
     
-    
 }
 
 public class NotifiOSCumulationCenter {
@@ -109,15 +108,12 @@ public class NotifiOSCumulationCenter {
             callback(error as NSError)
             
         }
-
-        
         
     }
     
     
     public func remove (notif : NCNotification, callback : (NSError?)-> ()) {
         
-
         observer?.notificationsWillBeRemoved([notif])
         persistenceSetup.context.deleteObject(notif)
         do {
@@ -132,8 +128,6 @@ public class NotifiOSCumulationCenter {
             
         }
 
-        
-        
     }
     
     
@@ -199,7 +193,7 @@ public class NotifiOSCumulationCenter {
         
     }
 
-    public func markAsRead (notifications : [NCNotification], callback: (NSError?)->Void) {
+    public func onceMarkAsRead (notifications : [NCNotification], callback: (NSError?)->Void) {
         
         for notif in notifications {
             
@@ -217,15 +211,12 @@ public class NotifiOSCumulationCenter {
             callback(error as NSError)
             
         }
-
         
     }
     
     public func markAllAsRead (callback: (NSError?)->()) {
         
-        
-        markAsRead(allNotifications!, callback: callback)
-        
+        onceMarkAsRead(allNotifications!, callback: callback)
         
     }
 
