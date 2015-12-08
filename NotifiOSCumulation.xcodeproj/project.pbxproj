@@ -24,11 +24,11 @@
 		30F208061BB372E0002BF57A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30F208051BB372E0002BF57A /* CoreData.framework */; };
 		46E2BED91BBA7A1C00F238D3 /* NotifiOSCumulation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 309E34151BB04CF10049B9A5 /* NotifiOSCumulation.framework */; };
 		46E2BEDA1BBA7A1C00F238D3 /* NotifiOSCumulation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 309E34151BB04CF10049B9A5 /* NotifiOSCumulation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		46E2BEDF1BBA7A8100F238D3 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46E2BEDE1BBA7A8100F238D3 /* Storyboard.storyboard */; };
 		46E2BEE11BBA7AE400F238D3 /* DefaultNotificationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E2BEE01BBA7AE400F238D3 /* DefaultNotificationsTableViewController.swift */; };
 		46E2BEE31BBB828300F238D3 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46E2BEE21BBB828300F238D3 /* Media.xcassets */; };
 		46E2BEE51BBB831900F238D3 /* NCNotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E2BEE41BBB831900F238D3 /* NCNotificationTableViewCell.swift */; };
 		92079F0D1BDF82C300CCADD5 /* NCPersistenceSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92079F0C1BDF82C300CCADD5 /* NCPersistenceSetup.swift */; };
+		924F654C1C16D97D00597298 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 924F654E1C16D97D00597298 /* Storyboard.storyboard */; };
 		92FD2E301C155CA10062F485 /* DefaultNotificationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FD2E2F1C155CA00062F485 /* DefaultNotificationFactory.swift */; };
 /* End PBXBuildFile section */
 
@@ -102,11 +102,15 @@
 		309E34661BB0D2820049B9A5 /* NCNotification+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NCNotification+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		309E34671BB0D2820049B9A5 /* NCNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NCNotification.swift; sourceTree = "<group>"; };
 		30F208051BB372E0002BF57A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		46E2BEDE1BBA7A8100F238D3 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		46E2BEE01BBA7AE400F238D3 /* DefaultNotificationsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultNotificationsTableViewController.swift; sourceTree = "<group>"; };
 		46E2BEE21BBB828300F238D3 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		46E2BEE41BBB831900F238D3 /* NCNotificationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NCNotificationTableViewCell.swift; sourceTree = "<group>"; };
 		92079F0C1BDF82C300CCADD5 /* NCPersistenceSetup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NCPersistenceSetup.swift; sourceTree = "<group>"; };
+		924F654F1C16D9B100597298 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Storyboard.storyboard; sourceTree = "<group>"; };
+		924F65501C16DAA200597298 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Storyboard.strings; sourceTree = "<group>"; };
+		924F65511C16DAA200597298 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Main.strings; sourceTree = "<group>"; };
+		924F65521C16DAA200597298 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		924F65531C16DB0600597298 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Storyboard.strings; sourceTree = "<group>"; };
 		92FD2E2F1C155CA00062F485 /* DefaultNotificationFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultNotificationFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -184,7 +188,7 @@
 				309E34661BB0D2820049B9A5 /* NCNotification+CoreDataProperties.swift */,
 				309E34671BB0D2820049B9A5 /* NCNotification.swift */,
 				309E34641BB0575F0049B9A5 /* NotifiOSCumulationCenter.swift */,
-				46E2BEDE1BBA7A8100F238D3 /* Storyboard.storyboard */,
+				924F654E1C16D97D00597298 /* Storyboard.storyboard */,
 				46E2BEE41BBB831900F238D3 /* NCNotificationTableViewCell.swift */,
 				46E2BEE01BBA7AE400F238D3 /* DefaultNotificationsTableViewController.swift */,
 				92FD2E2F1C155CA00062F485 /* DefaultNotificationFactory.swift */,
@@ -406,7 +410,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				46E2BEE31BBB828300F238D3 /* Media.xcassets in Resources */,
-				46E2BEDF1BBA7A8100F238D3 /* Storyboard.storyboard in Resources */,
+				924F654C1C16D97D00597298 /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,6 +526,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				309E343A1BB04DAB0049B9A5 /* Base */,
+				924F65511C16DAA200597298 /* vi */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -530,8 +535,19 @@
 			isa = PBXVariantGroup;
 			children = (
 				309E343F1BB04DAB0049B9A5 /* Base */,
+				924F65521C16DAA200597298 /* vi */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		924F654E1C16D97D00597298 /* Storyboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				924F654F1C16D9B100597298 /* Base */,
+				924F65501C16DAA200597298 /* vi */,
+				924F65531C16DB0600597298 /* en */,
+			);
+			name = Storyboard.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
