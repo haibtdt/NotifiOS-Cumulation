@@ -53,7 +53,7 @@ public class DefaultNotificationsTableViewController: UITableViewController {
     
     @IBAction func markAllAsRead(sender: AnyObject) {
         
-        notificationCumulationCenter!.markAsRead(allNotifcations) { (_) -> Void in
+        notificationCumulationCenter!.onceMarkAsRead(allNotifcations) { (_) -> Void in
             
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 
